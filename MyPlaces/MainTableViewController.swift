@@ -36,15 +36,21 @@ class MainTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-//        cell.textLabel?.text = restaurantNames[indexPath.row]
-//        cell.imageView?.image =UIImage(named: restaurantNames[indexPath.row])
+        cell.textLabel?.text = restaurantNames[indexPath.row]
+        cell.imageView?.image = UIImage(named: restaurantNames[indexPath.row])
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
+        cell.imageView?.clipsToBounds = true
         
-        var contentConfiguration = cell.defaultContentConfiguration()
-        contentConfiguration.text = restaurantNames[indexPath.row]
-        contentConfiguration.image = UIImage(named: restaurantNames[indexPath.row])
-        cell.contentConfiguration = contentConfiguration
+//        var content = cell.defaultContentConfiguration()
+//        content.image = UIImage(named: restaurantNames[indexPath.row])
+//        content.text = restaurantNames[indexPath.row]
+//        cell.contentConfiguration = content
 
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        85
     }
 
     /*
