@@ -39,8 +39,7 @@ class MainTableViewController: UITableViewController {
         cell.imageOfPlace.clipsToBounds = true
         
 //        var content = cell.defaultContentConfiguration()
-//        content.image = UIImage(named: restaurantNames[indexPath.row])
-//        content.text = restaurantNames[indexPath.row]
+//        content.image = UIImage(named: restaurantNames[indexPath.row])//        content.text = restaurantNames[indexPath.row]
 //        cell.contentConfiguration = content
 
         return cell
@@ -92,4 +91,5 @@ class MainTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
 }
