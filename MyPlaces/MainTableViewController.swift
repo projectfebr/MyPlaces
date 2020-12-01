@@ -37,9 +37,11 @@ class MainTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
 //        cell.textLabel?.text = restaurantNames[indexPath.row]
+//        cell.imageView?.image =UIImage(named: restaurantNames[indexPath.row])
         
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.text = restaurantNames[indexPath.row]
+        contentConfiguration.image = UIImage(named: restaurantNames[indexPath.row])
         cell.contentConfiguration = contentConfiguration
 
         return cell
