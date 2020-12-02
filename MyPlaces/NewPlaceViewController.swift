@@ -9,7 +9,6 @@ import UIKit
 
 class NewPlaceViewController: UITableViewController {
 
-    var newPlace = Place()
     var imageIsChanged = false
     
     @IBOutlet weak var placeImage: UIImageView!
@@ -25,15 +24,9 @@ class NewPlaceViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.newPlace.savePlaces()
-        }
-        
-        
-        tableView.tableFooterView = UIView() // убрать разлиновку, пустое UIView
 
+        tableView.tableFooterView = UIView() // убрать разлиновку, пустое UIView
         saveButton.isEnabled = false
-        
         placeNameTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
@@ -73,7 +66,7 @@ class NewPlaceViewController: UITableViewController {
     }
     
     func saveNewPlace() {
-        
+    
         var image: UIImage?
         
         if imageIsChanged {
@@ -81,6 +74,13 @@ class NewPlaceViewController: UITableViewController {
         } else {
             image = #imageLiteral(resourceName: "imagePlaceholder")
         }
+        
+        let imageData = image?.pngData()
+        
+        let newPlace = Place(name: placeNameTF.text!, location: placeLocationTF.text!, type: placeTypeTF.text!, imageData: imageData)
+        
+        StorageManager.saveObject(place: newPlace)
+        
         
 //        newPlace = Place(name: placeNameTF.text!, location: placeLocationTF.text, type: placeTypeTF.text, restaurantImage: nil, image: image)
     }
