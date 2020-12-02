@@ -9,7 +9,7 @@ import UIKit
 
 class NewPlaceViewController: UITableViewController {
 
-    var newPlace: Place?
+    var newPlace = Place()
     var imageIsChanged = false
     
     @IBOutlet weak var placeImage: UIImageView!
@@ -25,6 +25,10 @@ class NewPlaceViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.async {
+            self.newPlace.savePlaces()
+        }
+        
         
         tableView.tableFooterView = UIView() // убрать разлиновку, пустое UIView
 
@@ -78,7 +82,7 @@ class NewPlaceViewController: UITableViewController {
             image = #imageLiteral(resourceName: "imagePlaceholder")
         }
         
-        newPlace = Place(name: placeNameTF.text!, location: placeLocationTF.text, type: placeTypeTF.text, restaurantImage: nil, image: image)
+//        newPlace = Place(name: placeNameTF.text!, location: placeLocationTF.text, type: placeTypeTF.text, restaurantImage: nil, image: image)
     }
 
 }
