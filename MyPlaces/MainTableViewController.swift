@@ -40,10 +40,22 @@ class MainTableViewController: UITableViewController {
 //        var content = cell.defaultContentConfiguration()
 //        content.image = UIImage(named: restaurantNames[indexPath.row])//        content.text = restaurantNames[indexPath.row]
 //        cell.contentConfiguration = content
-
         return cell
     }
+    
+    //MARK: Table view delegate
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let place = places[indexPath.row]
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, _) in
+            StorageManager.deleteObject(place: place)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction])
 
+        return swipeActions
+    }
 
     /*
     // Override to support conditional editing of the table view.
