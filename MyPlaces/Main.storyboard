@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fyf-eD-izU">
-                                <rect key="frame" x="0.0" y="116" width="414" height="746"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fyf-eD-izU">
+                                <rect key="frame" x="0.0" y="119" width="414" height="743"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="EJc-sn-LSl" customClass="CustomTableViewCell" customModule="MyPlaces" customModuleProvider="target">
@@ -83,7 +82,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LYp-Lh-F1j">
-                                <rect key="frame" x="0.0" y="88" width="414" height="28"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Title"/>
@@ -96,10 +95,13 @@
                         <viewLayoutGuide key="safeArea" id="0pv-3Y-fpS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fyf-eD-izU" firstAttribute="top" secondItem="LYp-Lh-F1j" secondAttribute="bottom" id="7xl-8w-ujN"/>
                             <constraint firstItem="0pv-3Y-fpS" firstAttribute="trailing" secondItem="LYp-Lh-F1j" secondAttribute="trailing" id="Lqb-hB-gkH"/>
                             <constraint firstItem="LYp-Lh-F1j" firstAttribute="leading" secondItem="0pv-3Y-fpS" secondAttribute="leading" id="RGo-2f-OkT"/>
-                            <constraint firstItem="fyf-eD-izU" firstAttribute="top" secondItem="LYp-Lh-F1j" secondAttribute="bottom" constant="1" id="YdB-h6-dHH"/>
                             <constraint firstItem="LYp-Lh-F1j" firstAttribute="top" secondItem="0pv-3Y-fpS" secondAttribute="top" id="ePD-fZ-eti"/>
+                            <constraint firstItem="fyf-eD-izU" firstAttribute="trailing" secondItem="0pv-3Y-fpS" secondAttribute="trailing" id="iZY-Dp-C2y"/>
+                            <constraint firstItem="fyf-eD-izU" firstAttribute="bottom" secondItem="0pv-3Y-fpS" secondAttribute="bottom" id="kYg-fV-bJO"/>
+                            <constraint firstItem="fyf-eD-izU" firstAttribute="leading" secondItem="0pv-3Y-fpS" secondAttribute="leading" id="uCb-DH-2CL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Places" largeTitleDisplayMode="never" id="HFI-4G-wTx">
