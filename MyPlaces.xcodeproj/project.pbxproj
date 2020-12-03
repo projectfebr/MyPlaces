@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F8E80292577BE7A00EE681C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8E80282577BE7A00EE681C /* StorageManager.swift */; };
+		1F8E805B2579A93C00EE681C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8E805A2579A93C00EE681C /* MapViewController.swift */; };
 		1FB36D4E2576B1D6007585A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB36D4D2576B1D6007585A2 /* AppDelegate.swift */; };
 		1FB36D502576B1D6007585A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB36D4F2576B1D6007585A2 /* SceneDelegate.swift */; };
 		1FB36D572576B1DA007585A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FB36D562576B1DA007585A2 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		1F8E80282577BE7A00EE681C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		1F8E805A2579A93C00EE681C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1FB36D4A2576B1D6007585A2 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FB36D4D2576B1D6007585A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FB36D4F2576B1D6007585A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				1FB36D6F2576ED5E007585A2 /* PlaceModel.swift */,
 				1F8E80282577BE7A00EE681C /* StorageManager.swift */,
 				1FB36D732576FF8F007585A2 /* Main.storyboard */,
+				1F8E805A2579A93C00EE681C /* MapViewController.swift */,
 				1FB36D782577051E007585A2 /* NewPlaceViewController.swift */,
 				1FB36D6C2576E8B8007585A2 /* CustomTableViewCell.swift */,
 				1FB36D562576B1DA007585A2 /* Assets.xcassets */,
@@ -224,6 +227,7 @@
 				1FB36D702576ED5E007585A2 /* PlaceModel.swift in Sources */,
 				1FB36D6D2576E8B9007585A2 /* CustomTableViewCell.swift in Sources */,
 				1FB36D502576B1D6007585A2 /* SceneDelegate.swift in Sources */,
+				1F8E805B2579A93C00EE681C /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
