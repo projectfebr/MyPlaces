@@ -173,7 +173,7 @@
                                                     </constraints>
                                                     <state key="normal" image="map"/>
                                                     <connections>
-                                                        <segue destination="2i9-oO-z9J" kind="presentation" modalPresentationStyle="fullScreen" id="5gu-e3-v2S"/>
+                                                        <segue destination="2i9-oO-z9J" kind="presentation" identifier="showMap" modalPresentationStyle="fullScreen" id="5gu-e3-v2S"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -381,6 +381,9 @@
                             <constraint firstItem="GMl-4y-ONe" firstAttribute="top" secondItem="DYO-El-UOe" secondAttribute="top" constant="40" id="dJW-TL-0nR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="STj-6L-SaR" id="JHN-db-tA2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bI4-Ih-ntq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

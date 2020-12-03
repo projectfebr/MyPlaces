@@ -127,6 +127,16 @@ class NewPlaceViewController: UITableViewController {
         title = currentPlace?.name
         saveButton.isEnabled = true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "showMap" else {
+            return
+        }
+        
+        let mapVC = segue.destination as! MapViewController
+        mapVC.place = currentPlace
+        
+    }
 
 }
 
