@@ -6,18 +6,21 @@
 //
 
 import UIKit
+import Cosmos
 
 class NewPlaceViewController: UITableViewController {
     
     
     var currentPlace: Place?
     var imageIsChanged = false
+    var currentRating = 0.0
     
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var placeNameTF: UITextField!
     @IBOutlet weak var placeLocationTF: UITextField!
     @IBOutlet weak var placeTypeTF: UITextField!
+    @IBOutlet weak var cosmosView: CosmosView!
     
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
@@ -30,6 +33,10 @@ class NewPlaceViewController: UITableViewController {
         saveButton.isEnabled = false
         placeNameTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setupEditScreen()
+        
+        cosmosView.didTouchCosmos = { rating in
+            self.currentRating = rating
+        }
 
     }
     
@@ -80,7 +87,7 @@ class NewPlaceViewController: UITableViewController {
         
         let imageData = image?.pngData()
         
-        let newPlace = Place(name: placeNameTF.text!, location: placeLocationTF.text!, type: placeTypeTF.text!, imageData: imageData)
+        let newPlace = Place(name: placeNameTF.text!, location: placeLocationTF.text!, type: placeTypeTF.text!, imageData: imageData, rating: currentRating)
         
         if currentPlace != nil {
             try! realm.write {
@@ -88,6 +95,7 @@ class NewPlaceViewController: UITableViewController {
                 currentPlace?.location = newPlace.location
                 currentPlace?.type = newPlace.location
                 currentPlace?.imageData = newPlace.imageData
+                currentPlace?.rating = currentRating
             }
         } else {
             StorageManager.saveObject(place: newPlace)
@@ -106,6 +114,8 @@ class NewPlaceViewController: UITableViewController {
             placeNameTF.text = currentPlace?.name
             placeTypeTF.text = currentPlace?.type
             placeLocationTF.text = currentPlace?.location
+            cosmosView.rating = currentPlace!.rating
+            
         }
     }
     
